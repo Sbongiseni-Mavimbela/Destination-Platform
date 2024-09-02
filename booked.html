@@ -4,44 +4,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booked Services - Travel Explorer Gauteng & North West</title>
+  <title>Travel Explorer Gauteng & North West</title>
   <style>
     body {
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       background-color: #3f4a57;
+      color: white;
+      margin: 0;
     }
-
-    .booked-services-container {
-      padding: 0%;
-    }
-
-    .booked-services-container h2 {
-      margin-left: 20px;
-    }
-
-    .service-card {
-      border: 1px solid #111611;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 15px;
-    }
-
-    .logo img {
-      height: 100px;
-    }
-
 
     .navbar {
-      margin-bottom: 0;
       background-color: rgb(50, 68, 78);
-    }
-
-    .navbar {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0px;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
 
+    .navbar .logo img {
+      height: 100px;
     }
 
     .nav-links {
@@ -49,15 +31,11 @@
       margin: 0;
       padding: 0;
       display: flex;
-      justify-content: center;
-    }
-
-    .nav-links li {
-      margin: 50px;
+      gap: 20px;
     }
 
     .nav-links a {
-      color: black;
+      color: white;
       text-decoration: none;
       font-size: 18px;
       transition: color 0.3s;
@@ -65,7 +43,70 @@
 
     .nav-links a:hover {
       color: #bff314;
+    }
 
+    .hero {
+      background: url('images/hero-banner.jpg') no-repeat center center/cover;
+      padding: 60px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+    }
+
+    .hero p {
+      font-size: 24px;
+      margin-top: 10px;
+    }
+
+    .section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .featured-destinations,
+    .special-offers,
+    .articles {
+      margin-bottom: 40px;
+    }
+
+    .destination-card,
+    .offer-card,
+    .article-card {
+      border: 1px solid #111611;
+      border-radius: 10px;
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 10px;
+      display: inline-block;
+      width: calc(33% - 40px);
+      vertical-align: top;
+    }
+
+    .destination-card img,
+    .offer-card img,
+    .article-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .destination-card h3,
+    .offer-card h3,
+    .article-card h3 {
+      font-size: 20px;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .destination-card p,
+    .offer-card p,
+    .article-card p {
+      font-size: 16px;
+      color: #666;
     }
 
     footer {
@@ -80,61 +121,102 @@
       font-size: 24px;
       color: white;
     }
+
+    @media (max-width: 768px) {
+      .destination-card,
+      .offer-card,
+      .article-card {
+        width: calc(100% - 40px);
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <header>
-
     <nav class="navbar">
       <div class="logo">
-        <img src="images/Log.jpg">
+        <img src="images/Log.jpg" alt="Logo">
       </div>
-
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="book now.html">Book Now</a></li>
-        <li><a href="booked.html">Booked</li>
+        <li><a href="booked.html">Booked</a></li>
         <li><a href="sign-in.html">Sign In</a></li>
       </ul>
     </nav>
-
   </header>
 
-  <div class="container booked-services-container">
-    <h2>Your Booked Services</h2>
-    <div class="service-card">
-      <h3>Hotel Booking in Durban</h3>
-      <p><strong>Date:</strong> August 25, 2024</p>
-      <p><strong>Price: R1900.00 Per Night</strong>
-    <p><strong>Status:</strong> Confirmed</p>
-  </div>
+  <section class="hero">
+    <h1>Welcome to Travel Explorer</h1>
+    <p>Discover Your Next Adventure with Us</p>
+  </section>
 
-  <div class="service-card">
-    <h3>Hotel Booking in Suncity</h3>
-    <p><strong>Date:</strong> August 29, 2024</p>
-    <p><strong>Price: R1700.00 Per Night</strong>
-  <p><strong>Status:</strong> Confirmed</p>
-  </div>
+  <section class="section featured-destinations">
+    <h2>Featured Destinations</h2>
+    <div class="destination-card">
+      <img src="images/centurion-hotel-01-786x500.jpg" alt="Destination 1">
+      <h3>Centurion Hotel</h3>
+      <p>Experience luxury and comfort in Centurion. Ideal for a relaxing getaway or business trip.</p>
+    </div>
+    <div class="destination-card">
+      <img src="images/Front.jpg" alt="Destination 2">
+      <h3>Durban Beachfront</h3>
+      <p>Enjoy the vibrant culture and beautiful beaches of Durban with our top-rated accommodations.</p>
+    </div>
+    <div class="destination-card">
+      <img src="images/Does the Sun shine_ Stepping into Sun City, South Africa's mega-hotel of dark memories.jpg" alt="Destination 3">
+      <h3>Sun City Resort</h3>
+      <p>Indulge in luxury at Sun City Resort with world-class amenities and stunning surroundings.</p>
+    </div>
+  </section>
 
-  <div class="service-card">
-    <h3>Hotel Booking in Cape Town</h3>
-    <p><strong>Date:</strong> August 29, 2024</p>
-    <p><strong>Price: R2300.00 Per Night</strong>
-  <p><strong>Status:</strong> Confirmed</p>
-  </div>
-  </div>
+  <section class="section special-offers">
+    <h2>Special Offers</h2>
+    <div class="offer-card">
+      <img src="images/20 percent off metallic golden 3d text rendering illustration Premium Psd.jpg" alt="Offer 1">
+      <h3>Summer Sale - 20% Off</h3>
+      <p>Book now and enjoy 20% off on select destinations. Limited time offer!</p>
+    </div>
+    <div class="offer-card">
+      <img src="images/30 Hotel Breakfast Images With A Breathtaking View.jpg" alt="Offer 2">
+      <h3>Free Breakfast with Booking</h3>
+      <p>Get a free breakfast for two when you book any of our hotels. Don’t miss out!</p>
+    </div>
+    <div class="offer-card">
+      <img src="images/The Ultimate List of Best Weekend Getaways.jpg" alt="Offer 3">
+      <h3>Weekend Getaway - Extra Night Free</h3>
+      <p>Book a weekend stay and get an extra night free. Perfect for a short escape.</p>
+    </div>
+  </section>
+
+  <section class="section articles">
+    <h2>Travel Tips & Guides</h2>
+    <div class="article-card">
+      <img src="images/Iceland travel.jpg" alt="Article 1">
+      <h3>Top 10 Travel Destinations for 2024</h3>
+      <p>Discover the hottest travel spots for the coming year. Plan your next adventure with our top picks.</p>
+    </div>
+    <div class="article-card">
+      <img src="images/This is How to Plan a Trip Abroad for the First Time — Harbors & Havens.jpg" alt="Article 2">
+      <h3>How to Travel on a Budget</h3>
+      <p>Learn how to get the most out of your travels without breaking the bank. Budget travel tips and tricks.</p>
+    </div>
+    <div class="article-card">
+      <img src="images/Travel packing list.jpg" alt="Article 3">
+      <h3>Essential Packing Tips for Every Trip</h3>
+      <p>Pack like a pro with our essential packing guide. Ensure you have everything you need for a smooth trip.</p>
+    </div>
+  </section>
 
   <footer>
-
     <div class="social-media">
       <i class="bi bi-whatsapp"></i>
       <i class="bi bi-instagram"></i>
       <i class="bi bi-facebook"></i>
     </div>
-    <p>&copy; 2024 TravelGo. All rights reserved.</p>
-
+    <p>&copy; 2024 Travel Explorer. All rights reserved.</p>
   </footer>
 
 </body>

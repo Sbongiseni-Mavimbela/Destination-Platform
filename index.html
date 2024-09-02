@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>hotel</title>
+  <title>Hotel Booking</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <style>
     body {
@@ -12,38 +12,63 @@
       padding: 0;
       background-color: rgb(50, 68, 78);
       font-family: 'Poppins', sans-serif;
-
+      color: white;
     }
 
     .logo img {
       height: 100px;
     }
 
-
     .navbar {
       margin-bottom: 0;
       background-color: #3f4a57;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+
+    .nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #bff314;
     }
 
     .section {
       background-image: url('images/pexels-david-bartus-43782-586687.jpg');
       background-size: cover;
       background-position: center;
-      height: 100vh;
+      height: 80vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: hwb(180 88% 10%);
       text-align: center;
+      padding: 20px;
     }
 
     .services-section {
-      padding: 60px 0;
+      padding: 60px 20px;
       text-align: center;
+      background-color: #2c3e50;
     }
 
     .services-section h2 {
       margin-bottom: 40px;
+      font-size: 28px;
     }
 
     .service {
@@ -51,7 +76,8 @@
       border-radius: 10px;
       padding: 20px;
       margin: 15px;
-      box-shadow: 5px 5px 5px 5px;
+      box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      background-color: #34495e;
       position: relative;
       text-align: center;
     }
@@ -59,55 +85,65 @@
     .service h3 {
       font-weight: bold;
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      font-size: 30px;
+      font-size: 24px;
       margin-bottom: 10px;
     }
 
     .service p {
-
-      margin-bottom: 90px;
-
+      margin-bottom: 60px;
     }
 
     .button-book {
       background-color: #4b2c2c;
       color: white;
-      border-radius: 3px;
+      border-radius: 5px;
       padding: 10px;
       cursor: pointer;
       position: absolute;
       bottom: 20px;
       left: 50%;
       transform: translateX(-50%);
+      width: 80%;
+      text-align: center;
     }
 
     .test {
-      padding: 60p;
+      padding: 40px 20px;
       background-color: rgb(224, 231, 243);
-
     }
 
-    .test {
+    .test h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .testimonial {
       border: 1px solid red;
       border-radius: 10px;
       padding: 20px;
       margin: 15px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      color: #333;
+      font-style: italic;
     }
 
     .contact-section {
-      padding: 60px 0;
+      padding: 60px 20px;
       text-align: center;
+      background-color: #2c3e50;
     }
 
     .contact-form input,
     .contact-form textarea {
       border-radius: 5px;
-      box-shadow: 3px 3px 8px;
       border: 1px solid red;
       padding: 10px;
-      width: 98%;
+      width: 100%;
       margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     .contact-form button {
@@ -117,50 +153,92 @@
       padding: 10px 20px;
       cursor: pointer;
       border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
 
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0px;
-
+    .contact-form button:hover {
+      background-color: #1a1e20;
     }
 
-    .nav-links {
-      list-style: none;
-      margin: 0;
-      padding: 0;
+    .search-bar {
+      margin: 20px 0;
       display: flex;
       justify-content: center;
     }
 
-    .nav-links li {
-      margin: 50px;
+    .search-bar input {
+      padding: 10px;
+      width: 250px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
-    .nav-links a {
-      color: black;
-      text-decoration: none;
-      font-size: 18px;
+    .search-bar button {
+      background-color: #292e2ed8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
     }
 
-    .nav-links a:hover {
-      color: #bff314;
+    .search-bar button:hover {
+      background-color: #1a1e20;
+    }
 
+    .filters {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .filters select {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
     }
 
     footer {
       background-color: #333;
       color: white;
       text-align: center;
-      padding: 30px;
+      padding: 20px;
     }
 
     .social-media i {
       margin: 0 15px;
       font-size: 24px;
       color: white;
+      transition: color 0.3s ease;
+    }
+
+    .social-media i:hover {
+      color: #bff314;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .service {
+        margin: 10px;
+      }
+
+      .button-book {
+        width: 100%;
+      }
+
+      .section {
+        padding: 10px;
+      }
+
+      .testimonial {
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
@@ -168,59 +246,71 @@
 <body>
 
   <header>
-
     <nav class="navbar">
       <div class="logo">
-        <img src="images/Log.jpg">
+        <img src="images/Log.jpg" alt="Hotel Logo">
       </div>
 
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
         <li><a href="book now.html">Book Now</a></li>
-        <li><a href="booked.html">Booked</li>
+        <li><a href="booked.html">Booked</a></li>
         <li><a href="sign-in.html">Sign In</a></li>
       </ul>
     </nav>
-
   </header>
 
   <section class="section">
+  </section>
 
+  <section class="search-bar">
+    <input type="text" placeholder="Search for a hotel..." />
+    <button type="button">Search</button>
+  </section>
+
+  <section class="filters">
+    <label for="filter-price">Price:</label>
+    <select id="filter-price">
+      <option value="low-to-high">Low to High</option>
+      <option value="high-to-low">High to Low</option>
+    </select>
+
+    <label for="filter-rating">Rating:</label>
+    <select id="filter-rating">
+      <option value="high-to-low">High to Low</option>
+      <option value="low-to-high">Low to High</option>
+    </select>
   </section>
 
   <section class="services-section">
-
     <h2>Our Service</h2>
 
     <div class="service">
       <h3>Hotels</h3>
-
       <p>Find and book the perfect accommodation for your stay.</p>
-
+      <button class="button-book">Book Now</button>
+    </div>
   </section>
 
+  </div>
+
   <section class="test">
-    <div class="container">
-      <h2>What Our Clients Say</h2>
+    <h2>What Our Clients Say</h2>
 
-      <div class="test">
-        <p>"The best travel agency experience I've ever had. Highly recommend their services!"</p>
-        <p>- Mandy</p>
-      </div>
+    <div class="testimonial">
+      <p>"The best travel agency experience I've ever had. Highly recommend their services!"</p>
+      <p>- Mandy</p>
+    </div>
 
+    <div class="testimonial">
+      <p>"Smooth booking process and excellent customer support. Will definitely use again."</p>
+      <p>- Charles</p>
+    </div>
 
-      <div class="test">
-        <p>"Smooth booking process and excellent customer support. Will definitely use again."</p>
-        <p>- Charles</p>
-      </div>
-
-
-      <div class="test">
-        <p> "Exceptional service from start to finish. They truly care about making your trip unforgettable."</p>
-        <p>- Smara </p>
-      </div>
-
-
+    <div class="testimonial">
+      <p>"Exceptional service from start to finish. They truly care about making your trip unforgettable."</p>
+      <p>- Smara</p>
+    </div>
   </section>
 
   <section class="contact-section">
@@ -229,22 +319,22 @@
     <form class="contact-form">
       <input type="text" placeholder="Your Name" required>
       <input type="email" placeholder="Your Email" required>
-      <textarea rows="message" placeholder="Your Message" required></textarea>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-
-
   </section>
-  <footer>
 
+  <footer>
     <div class="social-media">
       <i class="bi bi-whatsapp"></i>
       <i class="bi bi-instagram"></i>
       <i class="bi bi-facebook"></i>
     </div>
     <p>&copy; 2024 TravelGo. All rights reserved.</p>
-
   </footer>
+
+
+  </script>
 
 </body>
 
